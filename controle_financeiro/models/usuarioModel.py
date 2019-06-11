@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class UsuarioModel(models.Model):
     usuario_id  = models.AutoField(primary_key=True)
     usuario_nome = models.CharField(max_length=45,null=False,blank=False,verbose_name="Nome")
@@ -13,4 +12,4 @@ class UsuarioModel(models.Model):
         verbose_name_plural = 'Usuários'
 
     def __str__(self):
-        return self.pessoa_nome
+        return self.usuario_nome

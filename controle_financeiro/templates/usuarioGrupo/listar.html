@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="table-responsive">
+        <table class="table
+                      table-striped
+                      table-bordered
+                      table-hover
+                      table-collapse">
+         <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Grupo</th>
+                <th>Data de cadastro</th>
+                <th>Ações</th>
+            </tr>
+         </thead>
+         <tbody>
+            {%for u in form%}
+            <tr>
+                <td>{{ u.usuario.usuario_nome }}</td>
+                <td>{{ u.grupo.grupo_nome }}</td>
+                <td>{{ u.data_cadastro }}</td>
+				<td class="text-center">
+				  <a id="idExcluir" class="btn btn-danger btn-sm"
+				     title="Excluir dados da pessoa"
+					 href="{% url 'remover_usuario_grupo' u.usuario.usuario_id u.grupo.grupo_id%}">
+                     <i class="fa fa-trash-o" aria-hidden="true"></i>
+				  </a>
+				</td>
+            </tr>
+            {%endfor%}
+         </tbody>
+        </table>
+        <a id="idIncluir" class="btn btn-primary" href="{% url 'inserir_usuario_grupo' %}">Novo Usuario Grupo <i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+
+
+    </div>
+
+
+</div>
+
+</body>
+</html>

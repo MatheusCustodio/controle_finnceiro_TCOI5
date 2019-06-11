@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{%block main%}
+
+<form class="form-horizontal" role="form" method="post" >
+       {%csrf_token%}
+  
+       <div class="row">
+	       <div class="col-sm-8 offset-2">
+	          <div class="form-group {% if field.errors %} has-error {%endif%}">
+	          <label for="id_usuario_nome"
+	                 class="col-sm-2 control-label">{{form.usuario_nome.label}}</label>
+	                 {% render_field form.usuario_nome class='form-control'%}
+	                 {% for error in form.usuario_nome.errors %}
+	                    <span class="help-block">{{error}}</span>
+	                 {% endfor %} 
+	          </div>
+	       </div>
+	       <div class="col-sm-8 offset-2">
+	          <div class="form-group {% if field.errors %} has-error {%endif%}">
+	          <label for="id_usuario_email"
+	                 class="col-sm-2 control-label">{{form.usuario_email.label}}</label>
+	                 {% render_field form.usuario_email class='form-control'%}
+	                 {% for error in form.usuario_email.errors %}
+	                    <span class="help-block">{{error}}</span>
+	                 {% endfor %} 
+	          </div>
+	       </div>
+           <div class="col-sm-8 offset-2">
+	          <div class="form-group {% if field.errors %} has-error {%endif%}">
+	          <label for="id_usuario_senha"
+	                 class="col-sm-2 control-label">{{form.usuario_senha.label}}</label>
+	                 {% render_field form.usuario_senha class='form-control'%}
+	                 {% for error in form.usuario_senha.errors %}
+	                    <span class="help-block">{{error}}</span>
+	                 {% endfor %}
+	          </div>
+	       </div>
+           <div class="offset-2 col-sm-2">
+	              <button type="submit"
+	                      class="btn btn-primary">Salvar</button>
+          </div>
+       </div> 
+
+  </form>
+
+{%endblock%}
