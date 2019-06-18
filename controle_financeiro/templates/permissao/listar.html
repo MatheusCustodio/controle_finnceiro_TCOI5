@@ -13,29 +13,33 @@
          <thead>
             <tr>
                 <th>Nome</th>
-                <th>Permissão</th>
+                <th>Leitura</th>
+                <th>Escrita</th>
+                <th>Remoção</th>
                 <th>Ações</th>
             </tr>
          </thead>
          <tbody>
             {%for u in form%}
             <tr>
-                <td>{{ u.grupo_nome }}</td>
-                <td>{{ u.grupo_permissao }}</td>
+                <td>{{ u.permissao_nome }}</td>
+                <td><input type="checkbox" {% if u.permissao_read %} checked {% endif %} readonly/></td>
+                <td><input type="checkbox" {% if u.permissao_write %} checked {% endif %} readonly/></td>
+                <td><input type="checkbox" {% if u.permissao_delete %} checked {% endif %} readonly/></td>
 				<td class="text-center">
 				  <a id="idAlterar" class="btn btn-warning btn-sm"
 				     title="Alterar dados do grupo"
-					 href="{% url 'alterar_grupo' u.grupo_id%}">
+					 href="{% url 'alterar_permissao' u.permissao_id%}">
                      <i class="fa fa-pencil-square" aria-hidden="true"></i>
             	  </a>
 				  <a id="idExcluir" class="btn btn-danger btn-sm"
 				     title="Excluir dados do grupo"
-					 href="{% url 'remover_grupo' u.grupo_id%}">
+					 href="{% url 'remover_permissao' u.permissao_id%}">
                      <i class="fa fa-trash-o" aria-hidden="true"></i>
 				  </a>
                   <a id="idConsultar" class="btn btn-info btn-sm"
 				     title="Consultar dados do grupo"
-					 href="{% url 'exibir_grupo' u.grupo_id%}">
+					 href="{% url 'exibir_permissao' u.permissao_id%}">
                      <i class="fa fa-eye" aria-hidden="true"></i>
 				  </a>
 				</td>
@@ -43,7 +47,7 @@
             {%endfor%}
          </tbody>
         </table>
-        <a id="idIncluir" class="btn btn-primary" href="{% url 'inserir_grupo' %}">Novo Grupo <i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+        <a id="idIncluir" class="btn btn-primary" href="{% url 'inserir_permissao' %}">Nova Permissão <i class="fa fa-check-square-o" aria-hidden="true"></i></a>
 
 
     </div>

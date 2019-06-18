@@ -12,30 +12,36 @@
                       table-collapse">
          <thead>
             <tr>
-                <th>Nome</th>
-                <th>Permissão</th>
+                <th>Referencial</th>
+                <th>Descrição</th>
+                <th>Inicio Validade</th>
+                <th>Fim Validade</th>
+                <th>Tipo</th>
                 <th>Ações</th>
             </tr>
          </thead>
          <tbody>
             {%for u in form%}
             <tr>
-                <td>{{ u.grupo_nome }}</td>
-                <td>{{ u.grupo_permissao }}</td>
+                <td>{{ u.plano_contas_referencial }}</td>
+                <td>{{ u.plano_contas_descricao }}</td>
+                <td>{{ u.plano_contas_inicio_validade }}</td>
+                <td>{{ u.plano_contas_fim_validade }}</td>
+                <td>{{ u.plano_contas_tipo }}</td>
 				<td class="text-center">
 				  <a id="idAlterar" class="btn btn-warning btn-sm"
 				     title="Alterar dados do grupo"
-					 href="{% url 'alterar_grupo' u.grupo_id%}">
+					 href="{% url 'alterar_plano_conta' u.plano_contas_id%}">
                      <i class="fa fa-pencil-square" aria-hidden="true"></i>
             	  </a>
 				  <a id="idExcluir" class="btn btn-danger btn-sm"
 				     title="Excluir dados do grupo"
-					 href="{% url 'remover_grupo' u.grupo_id%}">
+					 href="{% url 'remover_plano_conta' u.plano_contas_id%}">
                      <i class="fa fa-trash-o" aria-hidden="true"></i>
 				  </a>
                   <a id="idConsultar" class="btn btn-info btn-sm"
 				     title="Consultar dados do grupo"
-					 href="{% url 'exibir_grupo' u.grupo_id%}">
+					 href="{% url 'exibir_plano_conta' u.plano_contas_id%}">
                      <i class="fa fa-eye" aria-hidden="true"></i>
 				  </a>
 				</td>
@@ -43,7 +49,7 @@
             {%endfor%}
          </tbody>
         </table>
-        <a id="idIncluir" class="btn btn-primary" href="{% url 'inserir_grupo' %}">Novo Grupo <i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+        <a id="idIncluir" class="btn btn-primary" href="{% url 'inserir_plano_conta' %}">Nova Permissão <i class="fa fa-check-square-o" aria-hidden="true"></i></a>
 
 
     </div>
