@@ -11,7 +11,7 @@
 
             <div class="col-sm-8 offset-2">
 	          <div class="form-group {% if field.errors %} has-error {%endif%}">
-	          <label for="id_permissao"
+	          <label for="id_plano_contas_referencial"
 	                 class="col-sm-2 control-label">{{form.plano_contas_referencial.label}}</label>
 	                 {% render_field form.plano_contas_referencial class='form-control'%}
 	                 {% for error in form.plano_contas_referencial.errors %}
@@ -22,7 +22,7 @@
 
 	       <div class="col-sm-8 offset-2">
 	          <div class="form-group {% if field.errors %} has-error {%endif%}">
-	          <label for="id_usuario_nome"
+	          <label for="id_plano_contas_descricao"
 	                 class="col-sm-2 control-label">{{form.plano_contas_descricao.label}}</label>
 	                 {% render_field form.plano_contas_descricao class='form-control'%}
 	                 {% for error in form.plano_contas_descricao.errors %}
@@ -32,9 +32,9 @@
 	       </div>
              <div class="col-sm-8 offset-2">
 	          <div class="form-group {% if field.errors %} has-error {%endif%}">
-	          <label for="id_usuario_nome"
+	          <label for="id_plano_contas_inicio_validade"
 	                 class="col-sm-2 control-label">{{form.plano_contas_inicio_validade.label}}</label>
-	                 {% render_field form.plano_contas_inicio_validade class='form-control'%}
+	                 {% render_field form.plano_contas_inicio_validade class='form-control js-date'%}
 	                 {% for error in form.plano_contas_inicio_validade.errors %}
 	                    <span class="help-block">{{error}}</span>
 	                 {% endfor %}
@@ -43,9 +43,9 @@
 
            <div class="col-sm-8 offset-2">
 	          <div class="form-group {% if field.errors %} has-error {%endif%}">
-	          <label for="id_usuario_nome"
+	          <label for="id_plano_contas_fim_validade"
 	                 class="col-sm-2 control-label">{{form.plano_contas_fim_validade.label}}</label>
-	                 {% render_field form.plano_contas_fim_validade class='form-control'%}
+	                 {% render_field form.plano_contas_fim_validade class='form-control js-date'%}
 	                 {% for error in form.plano_contas_fim_validade.errors %}
 	                    <span class="help-block">{{error}}</span>
 	                 {% endfor %}
@@ -54,7 +54,7 @@
 
             <div class="col-sm-8 offset-2">
 	          <div class="form-group {% if field.errors %} has-error {%endif%}">
-	          <label for="id_usuario_nome"
+	          <label for="id_plano_contas_tipo"
 	                 class="col-sm-2 control-label">{{form.plano_contas_tipo.label}}</label>
 	                 {% render_field form.plano_contas_tipo class='form-control'%}
 	                 {% for error in form.plano_contas_tipo.errors %}
